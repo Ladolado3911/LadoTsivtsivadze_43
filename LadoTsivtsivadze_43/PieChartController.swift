@@ -42,10 +42,10 @@ class PieChartController: UIViewController {
         let proportions2 = calculator.calculate(inp1: val1, inp2: val2, inp3: val3, inp4: val4)
         proportions = proportions2
         
-        temp1.text = "\(proportions2.segment1)%"
-        temp2.text = "\(proportions2.segment2)%"
-        temp3.text = "\(proportions2.segment3)%"
-        temp4.text = "\(proportions2.segment4)%"
+        temp1.text = "\(proportions2.segment1.rounded())%"
+        temp2.text = "\(proportions2.segment2.rounded())%"
+        temp3.text = "\(proportions2.segment3.rounded())%"
+        temp4.text = "\(proportions2.segment4.rounded())%"
         
         imgView.image = Painter.shared.pieChart(imageSize: imgView.frame.size, proportions: proportions!)
     }

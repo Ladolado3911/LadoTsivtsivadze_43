@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 
 struct Proportions {
-    var segment1: Int
-    var segment2: Int
-    var segment3: Int
-    var segment4: Int
+    var segment1: Float
+    var segment2: Float
+    var segment3: Float
+    var segment4: Float
     
-    init(seg1: Int, seg2: Int, seg3: Int, seg4: Int) {
+    init(seg1: Float, seg2: Float, seg3: Float, seg4: Float) {
         segment1 = seg1
         segment2 = seg2
         segment3 = seg3
@@ -38,8 +38,8 @@ class Calculator {
         return proportions
     }
     
-    private func getPercent(inp: Int) -> Int {
-        let num = Int((Float(inp) / Float(sum)) * 100)
+    private func getPercent(inp: Int) -> Float {
+        let num = (Float(inp) / Float(sum)) * 100
         return num
     }
 }
