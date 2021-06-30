@@ -10,7 +10,6 @@ import UIKit
 class PieChartController: UIViewController {
     
     @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var slider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +19,24 @@ class PieChartController: UIViewController {
         
     }
     
-    @IBAction func didSlide(_ sender: UISlider) {
-//        imgView.image = nil
-//        imgView.image = Painter.shared.rotatedSquare(size: imgView.frame.size, rotations: Int(sender.value))
-//        print(sender.value)
-//
+    @IBAction func slider1(_ sender: UISlider) {
+        
+        
+    }
+    
+    @IBAction func slider2(_ sender: UISlider) {
+        
+        
+    }
+    
+    @IBAction func slider3(_ sender: UISlider) {
+        
+        
+    }
+    
+    @IBAction func slider4(_ sender: UISlider) {
+        
+        
     }
 }
 

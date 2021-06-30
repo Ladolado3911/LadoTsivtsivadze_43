@@ -17,33 +17,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Scn-Cj-NEa">
-                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <rect key="frame" x="107" y="248" width="200" height="200"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="fVv-sR-Lt0"/>
                                     <constraint firstAttribute="height" constant="200" id="s1H-bA-xGf"/>
                                 </constraints>
                             </imageView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wKE-cd-eBl">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wKE-cd-eBl">
                                 <rect key="frame" x="18" y="812" width="378" height="31"/>
                                 <connections>
-                                    <action selector="didSlide:" destination="BYZ-38-t0r" eventType="valueChanged" id="mav-iX-JJb"/>
+                                    <action selector="slider4:" destination="BYZ-38-t0r" eventType="valueChanged" id="kkW-Ay-gKC"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Xsy-mz-qzE">
+                                <rect key="frame" x="18" y="762" width="378" height="31"/>
+                                <connections>
+                                    <action selector="slider3:" destination="BYZ-38-t0r" eventType="valueChanged" id="Gcv-QJ-cnC"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="CrJ-wk-cPG">
+                                <rect key="frame" x="18" y="712" width="378" height="31"/>
+                                <connections>
+                                    <action selector="slider2:" destination="BYZ-38-t0r" eventType="valueChanged" id="oLc-Mh-dlp"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="unv-AV-28w">
+                                <rect key="frame" x="18" y="662" width="378" height="31"/>
+                                <connections>
+                                    <action selector="slider1:" destination="BYZ-38-t0r" eventType="valueChanged" id="H78-O0-O9c"/>
                                 </connections>
                             </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Xsy-mz-qzE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0uE-cC-lKz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wKE-cd-eBl" secondAttribute="trailing" constant="20" id="5l4-PR-KSC"/>
+                            <constraint firstItem="Xsy-mz-qzE" firstAttribute="top" secondItem="CrJ-wk-cPG" secondAttribute="bottom" constant="20" id="7Nx-56-Ywm"/>
                             <constraint firstItem="Scn-Cj-NEa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GMS-LU-RsG"/>
-                            <constraint firstItem="Scn-Cj-NEa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IjQ-WY-yjo"/>
+                            <constraint firstItem="wKE-cd-eBl" firstAttribute="top" secondItem="Xsy-mz-qzE" secondAttribute="bottom" constant="20" id="Ho7-hz-QpK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CrJ-wk-cPG" secondAttribute="trailing" constant="20" id="IIN-wy-N8G"/>
+                            <constraint firstItem="Scn-Cj-NEa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="IjQ-WY-yjo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="unv-AV-28w" secondAttribute="trailing" constant="20" id="JEw-YE-RAT"/>
                             <constraint firstItem="wKE-cd-eBl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="PZT-8G-Ryn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xsy-mz-qzE" secondAttribute="trailing" constant="20" id="U8Q-LR-VgC"/>
+                            <constraint firstItem="CrJ-wk-cPG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="j8c-77-1t0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wKE-cd-eBl" secondAttribute="bottom" constant="20" id="nWk-HK-T2F"/>
+                            <constraint firstItem="unv-AV-28w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pwD-3h-LRf"/>
+                            <constraint firstItem="CrJ-wk-cPG" firstAttribute="top" secondItem="unv-AV-28w" secondAttribute="bottom" constant="20" id="vCb-52-E2v"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imgView" destination="Scn-Cj-NEa" id="Xal-oU-ivB"/>
-                        <outlet property="slider" destination="wKE-cd-eBl" id="7kG-gR-JKb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

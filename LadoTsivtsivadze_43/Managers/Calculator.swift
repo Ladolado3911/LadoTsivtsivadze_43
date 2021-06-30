@@ -24,7 +24,7 @@ struct Proportions {
 
 class Calculator {
     
-    var sum: Float = 0
+    private var sum: Float = 0
     
     func calculate(inp1: Float, inp2: Float, inp3: Float, inp4: Float) -> Proportions {
         sum = inp1 + inp2 + inp3 + inp4
