@@ -27,7 +27,7 @@ class Calculator {
     private var sum: Int = 0
     
     func calculate(inp1: Int, inp2: Int, inp3: Int, inp4: Int) -> Proportions {
-        sum = inp1 + inp2 + inp3 + inp4
+        sum = inp1 + inp2 + inp3 + inp4 
         
         let proportions = Proportions(seg1: getPercent(inp: inp1),
                                       seg2: getPercent(inp: inp2),

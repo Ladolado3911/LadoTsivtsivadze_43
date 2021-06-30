@@ -27,22 +27,23 @@ class Painter {
                 ((.pi * 2.0) * CGFloat(prop.segment3)) / 100,
                 ((.pi * 2.0) * CGFloat(prop.segment4)) / 100,
             ]
-            
-            //ctx.cgContext.addEllipse(in: square)
+
             var prevEndAngle: CGFloat = 0.0
+            
             for a in 0..<4 {
                 let length = lengths[a]
                 print("length: \(length)")
                 print("prevEndAngle: \(prevEndAngle)")
+
                 ctx.cgContext.addArc(center: center,
                                      radius: radius,
                                      startAngle: prevEndAngle,
                                      endAngle: prevEndAngle + length,
                                      clockwise: false)
                 
-                //ctx.cgContext.add
-                
+                ctx.cgContext.addLine(to: center)
                 prevEndAngle += length
+                
                 switch a {
                 case 0:
                     ctx.cgContext.setFillColor(UIColor.red.cgColor)
@@ -53,11 +54,10 @@ class Painter {
                 default:
                     ctx.cgContext.setFillColor(UIColor.green.cgColor)
                 }
-                //ctx.cgContext.strokePath()
+
                 ctx.cgContext.drawPath(using: .fillStroke)
             }
             ctx.cgContext.setLineWidth(0)
-            //ctx.cgContext.drawPath(using: .fillStroke)
         }
         return image
     }
