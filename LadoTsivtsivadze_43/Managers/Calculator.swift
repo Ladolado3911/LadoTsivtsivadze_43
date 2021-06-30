@@ -29,10 +29,16 @@ class Calculator {
     func calculate(inp1: Float, inp2: Float, inp3: Float, inp4: Float) -> Proportions {
         sum = inp1 + inp2 + inp3 + inp4
         
-        let proportions = Proportions(seg1: <#Int#>,
-                                      seg2: <#Int#>,
-                                      seg3: <#Int#>,
-                                      seg4: <#Int#>)
+        let proportions = Proportions(seg1: getPercent(inp: inp1),
+                                      seg2: getPercent(inp: inp2),
+                                      seg3: getPercent(inp: inp3),
+                                      seg4: getPercent(inp: inp4))
+        
+        sum = 0
         return proportions
+    }
+    
+    private func getPercent(inp: Float) -> Int {
+        Int(inp / sum) * 100
     }
 }
