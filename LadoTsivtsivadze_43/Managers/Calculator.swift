@@ -39,6 +39,7 @@ class Calculator {
     }
     
     private func getPercent(inp: Float) -> Int {
-        Int(inp / sum) * 100
+        let num = Int((inp / sum).rounded() * 100)
+        return num
     }
 }
