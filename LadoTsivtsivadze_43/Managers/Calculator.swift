@@ -24,9 +24,9 @@ struct Proportions {
 
 class Calculator {
     
-    private var sum: Float = 0
+    private var sum: Int = 0
     
-    func calculate(inp1: Float, inp2: Float, inp3: Float, inp4: Float) -> Proportions {
+    func calculate(inp1: Int, inp2: Int, inp3: Int, inp4: Int) -> Proportions {
         sum = inp1 + inp2 + inp3 + inp4
         
         let proportions = Proportions(seg1: getPercent(inp: inp1),
@@ -38,8 +38,8 @@ class Calculator {
         return proportions
     }
     
-    private func getPercent(inp: Float) -> Int {
-        let num = Int((inp / sum).rounded() * 100)
+    private func getPercent(inp: Int) -> Int {
+        let num = Int((Float(inp) / Float(sum)) * 100)
         return num
     }
 }

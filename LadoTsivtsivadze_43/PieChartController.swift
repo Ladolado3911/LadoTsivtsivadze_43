@@ -21,10 +21,10 @@ class PieChartController: UIViewController {
     @IBOutlet weak var slider3: UISlider!
     @IBOutlet weak var slider4: UISlider!
     
-    var val1: Int?
-    var val2: Int?
-    var val3: Int?
-    var val4: Int?
+    var val1: Int = 1
+    var val2: Int = 1
+    var val3: Int = 1
+    var val4: Int = 1
     
     
     private var calculator = Calculator()
@@ -33,31 +33,49 @@ class PieChartController: UIViewController {
         super.viewDidLoad()
 
         imgView.image = Painter.shared.pieChart(imageSize: imgView.frame.size)
+        updateTexts()
         
+    }
+    
+    func updateTexts() {
+        let proportions = calculator.calculate(inp1: val1, inp2: val2, inp3: val3, inp4: val4)
+        
+        temp1.text = "\(proportions.segment1)%"
+        temp2.text = "\(proportions.segment2)%"
+        temp3.text = "\(proportions.segment3)%"
+        temp4.text = "\(proportions.segment4)%"
     }
  
     
     @IBAction func slider1(_ sender: UISlider) {
         val1 = Int(sender.value.rounded())
-        temp1.text = "\(Int(sender.value.rounded()))"
-    
+        //temp1.text = "\(Int(sender.value.rounded()))"
+        print(val1)
+        updateTexts()
+
     }
     
     @IBAction func slider2(_ sender: UISlider) {
         val2 = Int(sender.value.rounded())
-        temp2.text = "\(Int(sender.value.rounded()))"
+        //temp2.text = "\(Int(sender.value.rounded()))"
+        print(val4)
+        updateTexts()
         
     }
     
     @IBAction func slider3(_ sender: UISlider) {
         val3 = Int(sender.value.rounded())
-        temp3.text = "\(Int(sender.value.rounded()))"
+        //temp3.text = "\(Int(sender.value.rounded()))"
+        print(val3)
+        updateTexts()
         
     }
     
     @IBAction func slider4(_ sender: UISlider) {
         val4 = Int(sender.value.rounded())
-        temp4.text = "\(Int(sender.value.rounded()))"
+        //temp4.text = "\(Int(sender.value.rounded()))"
+        print(val4)
+        updateTexts()
         
     }
 }
