@@ -27,11 +27,11 @@ class Painter {
                                 width: diameter,
                                 height: diameter)
             
-            ctx.cgContext.addEllipse(in: square)
+            //ctx.cgContext.addEllipse(in: square)
             ctx.cgContext.addArc(center: center,
                                  radius: radius,
-                                 startAngle: <#T##CGFloat#>,
-                                 endAngle: <#T##CGFloat#>,
+                                 startAngle: 0,
+                                 endAngle: .pi,
                                  clockwise: true)
             
             ctx.cgContext.setFillColor(UIColor.red.cgColor)
