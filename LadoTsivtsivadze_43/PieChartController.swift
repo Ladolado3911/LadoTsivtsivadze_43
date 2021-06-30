@@ -21,6 +21,8 @@ class PieChartController: UIViewController {
     @IBOutlet weak var slider3: UISlider!
     @IBOutlet weak var slider4: UISlider!
     
+    var proportions: Proportions?
+    
     var val1: Int = 1
     var val2: Int = 1
     var val3: Int = 1
@@ -31,19 +33,21 @@ class PieChartController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        imgView.image = Painter.shared.pieChart(imageSize: imgView.frame.size)
         updateTexts()
+        imgView.image = Painter.shared.pieChart(imageSize: imgView.frame.size, proportions: proportions!)
         
     }
     
     func updateTexts() {
-        let proportions = calculator.calculate(inp1: val1, inp2: val2, inp3: val3, inp4: val4)
+        let proportions2 = calculator.calculate(inp1: val1, inp2: val2, inp3: val3, inp4: val4)
+        proportions = proportions2
         
-        temp1.text = "\(proportions.segment1)%"
-        temp2.text = "\(proportions.segment2)%"
-        temp3.text = "\(proportions.segment3)%"
-        temp4.text = "\(proportions.segment4)%"
+        temp1.text = "\(proportions2.segment1)%"
+        temp2.text = "\(proportions2.segment2)%"
+        temp3.text = "\(proportions2.segment3)%"
+        temp4.text = "\(proportions2.segment4)%"
+        
+        imgView.image = Painter.shared.pieChart(imageSize: imgView.frame.size, proportions: proportions!)
     }
  
     

@@ -14,29 +14,50 @@ class Painter {
     
     private init() {}
     
-    
-    func pieChart(imageSize sz: CGSize) -> UIImage {
+    func pieChart(imageSize sz: CGSize, proportions prop: Proportions) -> UIImage {
         let renderer = UIGraphicsImageRenderer(size: sz)
         let diameter = sz.width - 40
         let radius = diameter / 2
         let center = CGPoint(x: sz.width / 2, y: sz.height / 2)
         
         let image = renderer.image { ctx in
-            let square = CGRect(x: center.x - (diameter / 2),
-                                y: center.y - (diameter / 2),
-                                width: diameter,
-                                height: diameter)
+            let lengths = [
+                ((.pi * 2.0) * CGFloat(prop.segment1)) / 100,
+                ((.pi * 2.0) * CGFloat(prop.segment2)) / 100,
+                ((.pi * 2.0) * CGFloat(prop.segment3)) / 100,
+                ((.pi * 2.0) * CGFloat(prop.segment4)) / 100,
+            ]
             
             //ctx.cgContext.addEllipse(in: square)
-            ctx.cgContext.addArc(center: center,
-                                 radius: radius,
-                                 startAngle: 0,
-                                 endAngle: .pi,
-                                 clockwise: true)
-            
-            ctx.cgContext.setFillColor(UIColor.red.cgColor)
+            var prevEndAngle: CGFloat = 0.0
+            for a in 0..<4 {
+                let length = lengths[a]
+                print("length: \(length)")
+                print("prevEndAngle: \(prevEndAngle)")
+                ctx.cgContext.addArc(center: center,
+                                     radius: radius,
+                                     startAngle: prevEndAngle,
+                                     endAngle: prevEndAngle + length,
+                                     clockwise: false)
+                
+                //ctx.cgContext.add
+                
+                prevEndAngle += length
+                switch a {
+                case 0:
+                    ctx.cgContext.setFillColor(UIColor.red.cgColor)
+                case 1:
+                    ctx.cgContext.setFillColor(UIColor.blue.cgColor)
+                case 2:
+                    ctx.cgContext.setFillColor(UIColor.yellow.cgColor)
+                default:
+                    ctx.cgContext.setFillColor(UIColor.green.cgColor)
+                }
+                //ctx.cgContext.strokePath()
+                ctx.cgContext.drawPath(using: .fillStroke)
+            }
             ctx.cgContext.setLineWidth(0)
-            ctx.cgContext.drawPath(using: .fillStroke)
+            //ctx.cgContext.drawPath(using: .fillStroke)
         }
         return image
     }
