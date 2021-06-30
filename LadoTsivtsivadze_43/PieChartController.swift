@@ -15,14 +15,16 @@ class PieChartController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imgView.image = Painter.shared.test(size: imgView.frame.size)
+        imgView.image = Painter.shared.pieChart(imageSize: imgView.frame.size)
         
         
     }
     
     @IBAction func didSlide(_ sender: UISlider) {
-        
-        
+//        imgView.image = nil
+//        imgView.image = Painter.shared.rotatedSquare(size: imgView.frame.size, rotations: Int(sender.value))
+//        print(sender.value)
+//
     }
 }
 
